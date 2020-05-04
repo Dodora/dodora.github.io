@@ -87,17 +87,12 @@
 <meta property="og:description" content="数据分析之新闻分类加载数据集12345678910import numpy as npimport pandas as pdimport matplotlib.pyplot as pltplt.rcParams[&#39;font.family&#39;] &#x3D; &#39;SimHei&#39;plt.rcParams[&#39;axes.unicode_minus&#39;] &#x3D; Falsenews &#x3D; pd.read_csv(&#39;chinese">
 <meta property="og:image" content="http://dodora.github.io/2020/05/03/%E6%96%B0%E9%97%BB%E5%88%86%E7%B1%BB/output_28_2.png">
 <meta property="og:image" content="http://dodora.github.io/2020/05/03/%E6%96%B0%E9%97%BB%E5%88%86%E7%B1%BB/output_30_2.png">
-<meta property="og:image" content="http://dodora.github.io/2020/05/03/%E6%96%B0%E9%97%BB%E5%88%86%E7%B1%BB/output_36_1.png">
 <meta property="og:image" content="http://dodora.github.io/2020/05/03/%E6%96%B0%E9%97%BB%E5%88%86%E7%B1%BB/output_38_2.png">
-<meta property="og:image" content="http://dodora.github.io/2020/05/03/%E6%96%B0%E9%97%BB%E5%88%86%E7%B1%BB/output_40_1.png">
 <meta property="og:image" content="http://dodora.github.io/2020/05/03/%E6%96%B0%E9%97%BB%E5%88%86%E7%B1%BB/output_42_1.png">
-<meta property="og:image" content="http://dodora.github.io/2020/05/03/%E6%96%B0%E9%97%BB%E5%88%86%E7%B1%BB/output_47_1.png">
 <meta property="og:image" content="http://dodora.github.io/2020/05/03/%E6%96%B0%E9%97%BB%E5%88%86%E7%B1%BB/output_48_1.png">
 <meta property="og:image" content="http://dodora.github.io/2020/05/03/%E6%96%B0%E9%97%BB%E5%88%86%E7%B1%BB/%E7%A1%AC%E7%9B%98%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4%E5%8D%95%E4%BD%8D%E5%A4%A7%E5%B0%8F%E6%8D%A2%E7%AE%97.jpg">
-<meta property="og:image" content="http://dodora.github.io/2020/05/03/%E6%96%B0%E9%97%BB%E5%88%86%E7%B1%BB/%E7%A1%AC%E7%9B%98%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4%E5%8D%95%E4%BD%8D%E5%A4%A7%E5%B0%8F%E6%8D%A2%E7%AE%97.jpg">
-<meta property="og:image" content="http://dodora.github.io/2020/05/03/%E6%96%B0%E9%97%BB%E5%88%86%E7%B1%BB/bayes.png">
 <meta property="article:published_time" content="2020-05-04T04:44:56.000Z">
-<meta property="article:modified_time" content="2020-05-04T05:27:51.627Z">
+<meta property="article:modified_time" content="2020-05-04T08:42:43.666Z">
 <meta property="article:author" content="dora">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://dodora.github.io/2020/05/03/%E6%96%B0%E9%97%BB%E5%88%86%E7%B1%BB/output_28_2.png">
@@ -779,7 +774,9 @@ Name: tag, dtype: int64
 
 
 
-&lt;matplotlib.axes._subplots.AxesSubplot at 0x121222610&gt;</code></pre><p><img src="output_28_2.png" alt="png"></p>
+&lt;matplotlib.axes._subplots.AxesSubplot at 0x121222610&gt;</code></pre><img src="/2020/05/03/%E6%96%B0%E9%97%BB%E5%88%86%E7%B1%BB/output_28_2.png" class="">
+
+
 <h2 id="年份数量分布"><a href="#年份数量分布" class="headerlink" title="年份数量分布"></a>年份数量分布</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">t = news[<span class="string">'date'</span>].str.split(<span class="string">'-'</span>,expand = <span class="literal">True</span>)</span><br><span class="line">t2 = t[<span class="number">0</span>].value_counts()</span><br><span class="line">print(t2)</span><br><span class="line">t2.plot(kind = <span class="string">'bar'</span>)</span><br><span class="line"><span class="comment">#t[1].value_counts().plot(kind = 'bar')</span></span><br><span class="line"><span class="comment">#t[2].value_counts().plot(kind = 'bar')</span></span><br></pre></td></tr></table></figure>
 
 <pre><code>2017    7903
@@ -791,7 +788,9 @@ Name: 0, dtype: int64
 
 
 
-&lt;matplotlib.axes._subplots.AxesSubplot at 0x135619a50&gt;</code></pre><p><img src="output_30_2.png" alt="png"></p>
+&lt;matplotlib.axes._subplots.AxesSubplot at 0x135619a50&gt;</code></pre><img src="/2020/05/03/%E6%96%B0%E9%97%BB%E5%88%86%E7%B1%BB/output_30_2.png" class="">
+
+
 <h2 id="词汇统计"><a href="#词汇统计" class="headerlink" title="词汇统计"></a>词汇统计</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> itertools <span class="keyword">import</span> chain</span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</span><br><span class="line"></span><br><span class="line">li_2d = news[<span class="string">'content'</span>].tolist() <span class="comment">#二维列表</span></span><br><span class="line">li_1d = list(chain.from_iterable(li_2d))</span><br><span class="line">print(<span class="string">f'总词汇量:<span class="subst">&#123;len(li_1d)&#125;</span>'</span>)</span><br><span class="line">c = Counter(li_1d)</span><br><span class="line">print(<span class="string">f'不重复词汇数量:<span class="subst">&#123;len(c)&#125;</span>'</span>)</span><br><span class="line">common = c.most_common(<span class="number">15</span>) <span class="comment">#返回从大到小的15个</span></span><br><span class="line">print(common)</span><br><span class="line">chain.from_iterable(li_2d)</span><br></pre></td></tr></table></figure>
 
 <pre><code>总词汇量:2467431
@@ -807,7 +806,9 @@ Name: 0, dtype: int64
 
 
 
-<pre><code>&lt;BarContainer object of 15 artists&gt;</code></pre><p><img src="output_36_1.png" alt="png"></p>
+<pre><code>&lt;BarContainer object of 15 artists&gt;</code></pre>{% asset_img output_36_1.png %}
+
+
 <h2 id="百分比统计"><a href="#百分比统计" class="headerlink" title="百分比统计"></a>百分比统计</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">total = len(li_1d)</span><br><span class="line">percentage = [v * <span class="number">100</span> / total <span class="keyword">for</span> v <span class="keyword">in</span> frequency]</span><br><span class="line">print([<span class="string">f'<span class="subst">&#123;v:<span class="number">.2</span>f&#125;</span>'</span> <span class="keyword">for</span> v <span class="keyword">in</span> percentage])</span><br><span class="line">plt.figure(figsize = (<span class="number">12</span>,<span class="number">5</span>))</span><br><span class="line">plt.bar(vocabulary, percentage)</span><br></pre></td></tr></table></figure>
 
 <pre><code>[&apos;0.83&apos;, &apos;0.76&apos;, &apos;0.54&apos;, &apos;0.50&apos;, &apos;0.47&apos;, &apos;0.47&apos;, &apos;0.44&apos;, &apos;0.43&apos;, &apos;0.43&apos;, &apos;0.38&apos;, &apos;0.34&apos;, &apos;0.33&apos;, &apos;0.30&apos;, &apos;0.29&apos;, &apos;0.28&apos;]
@@ -816,13 +817,17 @@ Name: 0, dtype: int64
 
 
 
-&lt;BarContainer object of 15 artists&gt;</code></pre><p><img src="output_38_2.png" alt="png"></p>
+&lt;BarContainer object of 15 artists&gt;</code></pre><img src="/2020/05/03/%E6%96%B0%E9%97%BB%E5%88%86%E7%B1%BB/output_38_2.png" class="">
+
+
 <h2 id="新闻词汇长度统计"><a href="#新闻词汇长度统计" class="headerlink" title="新闻词汇长度统计"></a>新闻词汇长度统计</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">num = [len(li) <span class="keyword">for</span> li <span class="keyword">in</span> li_2d]</span><br><span class="line">length = <span class="number">15</span></span><br><span class="line">plt.bar(range(length),sorted(num, reverse = <span class="literal">True</span>)[:length]) <span class="comment">#横轴和纵轴的个数要相等</span></span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&lt;BarContainer object of 15 artists&gt;</code></pre><p><img src="output_40_1.png" alt="png"></p>
+<pre><code>&lt;BarContainer object of 15 artists&gt;</code></pre>{% asset_img output_40_1.png %}
+
+
 <h2 id="新闻词汇长度分布统计"><a href="#新闻词汇长度分布统计" class="headerlink" title="新闻词汇长度分布统计"></a>新闻词汇长度分布统计</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plt.hist(num) <span class="comment">#分组频数统计图</span></span><br></pre></td></tr></table></figure>
 
 
@@ -832,19 +837,29 @@ Name: 0, dtype: int64
         3.4000e+01, 1.4000e+01, 2.0000e+00, 3.0000e+00, 1.0000e+00]),
  array([   0. ,  209.8,  419.6,  629.4,  839.2, 1049. , 1258.8, 1468.6,
         1678.4, 1888.2, 2098. ]),
- &lt;a list of 10 Patch objects&gt;)</code></pre><p><img src="output_42_1.png" alt="png"></p>
+ &lt;a list of 10 Patch objects&gt;)</code></pre><img src="/2020/05/03/%E6%96%B0%E9%97%BB%E5%88%86%E7%B1%BB/output_42_1.png" class="">
+
+
+
+
+
+
 <h2 id="生成词云图"><a href="#生成词云图" class="headerlink" title="生成词云图"></a>生成词云图</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> wordcloud <span class="keyword">import</span> WordCloud</span><br><span class="line"></span><br><span class="line"><span class="comment">#需要指定字体的位置，否则中文无法正常显示</span></span><br><span class="line">wc = WordCloud(font_path = <span class="string">r'/Users/duo/opt/anaconda3/lib/python3.7/site-packages/matplotlib/mpl-data/fonts/ttf/SimHei.ttf'</span>,</span><br><span class="line">              width = <span class="number">800</span>, height = <span class="number">600</span>)</span><br><span class="line">li_2d = news[<span class="string">'content'</span>].tolist()</span><br><span class="line">li_1d = list(chain.from_iterable(li_2d))</span><br><span class="line">join_words = <span class="string">' '</span>.join(li_1d)</span><br><span class="line">img = wc.generate(join_words)</span><br><span class="line">plt.figure(figsize = (<span class="number">15</span>,<span class="number">10</span>))</span><br><span class="line">plt.imshow(img)</span><br><span class="line">plt.axis(<span class="string">'off'</span>) <span class="comment">#不要坐标轴</span></span><br><span class="line">wc.to_file(<span class="string">'wordcloud.png'</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>&lt;wordcloud.wordcloud.WordCloud at 0x1239c6950&gt;</code></pre><p><img src="output_47_1.png" alt="png"></p>
+<pre><code>&lt;wordcloud.wordcloud.WordCloud at 0x1239c6950&gt;</code></pre>{% asset_img output_47_1.png %}
+
+
+
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wc = WordCloud(font_path = <span class="string">r'/Users/duo/opt/anaconda3/lib/python3.7/site-packages/matplotlib/mpl-data/fonts/ttf/SimHei.ttf'</span>,</span><br><span class="line">              mask = plt.imread(<span class="string">'/Users/duo/Library/Containers/com.tencent.xinWeChat/Data/Library/Application Support/com.tencent.xinWeChat/2.0b4.0.9/54e92ac7969f909714fb618cd36a83f4/Message/MessageTemp/666f0dbe506e84fd29701a2623dd533a/Image/16421588397019_.pic_hd.jpg'</span>))</span><br><span class="line">img = wc.generate(join_words)</span><br><span class="line">plt.figure(figsize = (<span class="number">15</span>,<span class="number">10</span>))</span><br><span class="line">plt.imshow(img)      </span><br><span class="line">plt.axis(<span class="string">'off'</span>)</span><br></pre></td></tr></table></figure>
 
 
 
 
-<pre><code>(-0.5, 2108.5, 1625.5, -0.5)</code></pre><p><img src="output_48_1.png" alt="png"></p>
+<pre><code>(-0.5, 2108.5, 1625.5, -0.5)</code></pre><img src="/2020/05/03/%E6%96%B0%E9%97%BB%E5%88%86%E7%B1%BB/output_48_1.png" class="">
+
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.feature_extraction.text <span class="keyword">import</span> CountVectorizer</span><br><span class="line"><span class="comment">#词频是特征值，词语是特征</span></span><br><span class="line">count = CountVectorizer()</span><br><span class="line">docs = [</span><br><span class="line">    <span class="string">'Where there is a will, there is a way'</span>,</span><br><span class="line">    <span class="string">'There is no royal road to learning'</span>,</span><br><span class="line">]</span><br><span class="line">bag = count.fit_transform(docs) <span class="comment">#bag是一个稀疏的矩阵 稀疏矩阵只存储不为0的值</span></span><br><span class="line">print(bag)</span><br><span class="line">print(bag.shape)</span><br><span class="line">print(bag.toarray()) <span class="comment"># 调用稀疏矩阵的toarray方法，将稀疏矩阵转换为ndarray对象</span></span><br><span class="line">print(bag.toarray().shape)</span><br></pre></td></tr></table></figure>
 
 <pre><code>  (0, 8)    1
@@ -987,14 +1002,15 @@ Name: tag, dtype: int64</code></pre><h2 id="构建训练集和测试集"><a href
 
 
 
-<pre><code>25.076227962970734</code></pre><p><img src="%E7%A1%AC%E7%9B%98%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4%E5%8D%95%E4%BD%8D%E5%A4%A7%E5%B0%8F%E6%8D%A2%E7%AE%97.jpg" alt="cal"></p>
-<img src="/2020/05/03/%E6%96%B0%E9%97%BB%E5%88%86%E7%B1%BB/%E7%A1%AC%E7%9B%98%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4%E5%8D%95%E4%BD%8D%E5%A4%A7%E5%B0%8F%E6%8D%A2%E7%AE%97.jpg" class="">
+<pre><code>25.076227962970734</code></pre><img src="/2020/05/03/%E6%96%B0%E9%97%BB%E5%88%86%E7%B1%BB/%E7%A1%AC%E7%9B%98%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4%E5%8D%95%E4%BD%8D%E5%A4%A7%E5%B0%8F%E6%8D%A2%E7%AE%97.jpg" class="">
 
 <h2 id="利用方差分析（ANOVA）进行特征选择"><a href="#利用方差分析（ANOVA）进行特征选择" class="headerlink" title="利用方差分析（ANOVA）进行特征选择"></a>利用方差分析（ANOVA）进行特征选择</h2><p><a href="https://www.cnblogs.com/massquantity/p/10486904.html" target="_blank" rel="noopener">https://www.cnblogs.com/massquantity/p/10486904.html</a></p>
 <p>利用F检验找出前20000个对分类结果最有影响的特征（词）：类别：国内/国外新闻，样本数，总共21w个F值</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.feature_selection <span class="keyword">import</span> SelectKBest</span><br><span class="line"><span class="keyword">from</span> sklearn.feature_selection <span class="keyword">import</span> f_classif</span><br><span class="line"></span><br><span class="line">selector = SelectKBest(f_classif, k = min(<span class="number">20000</span>, X_train.shape[<span class="number">1</span>])) <span class="comment">#选择20000个和特征数量较少的那个 参数设置</span></span><br><span class="line"><span class="comment">#21w个单因素方差分析</span></span><br><span class="line">selector.fit(X_train, y_train) <span class="comment">#训练</span></span><br><span class="line">X_train = selector.transform(X_train).astype(np.float32) <span class="comment">#转换 用的时候还要再执行</span></span><br><span class="line">X_test = selector.transform(X_test).astype(np.float32)</span><br><span class="line">print(X_train.shape, X_test.shape)</span><br></pre></td></tr></table></figure>
 
-<pre><code>(15549, 20000) (5184, 20000)</code></pre><h2 id="朴素贝叶斯算法实现分类与预测"><a href="#朴素贝叶斯算法实现分类与预测" class="headerlink" title="朴素贝叶斯算法实现分类与预测"></a>朴素贝叶斯算法实现分类与预测</h2><p><img src="bayes.png" alt="bayes"></p>
+<pre><code>(15549, 20000) (5184, 20000)</code></pre><h2 id="朴素贝叶斯算法实现分类与预测"><a href="#朴素贝叶斯算法实现分类与预测" class="headerlink" title="朴素贝叶斯算法实现分类与预测"></a>朴素贝叶斯算法实现分类与预测</h2>{% asset_img bayes.png %}
+
+
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.naive_bayes <span class="keyword">import</span> GaussianNB</span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> classification_report</span><br><span class="line"></span><br><span class="line">X_train = X_train.toarray()</span><br><span class="line">X_test = X_test.toarray()</span><br><span class="line"></span><br><span class="line">nb = GaussianNB()</span><br><span class="line">nb.fit(X_train, y_train) <span class="comment">#X是向量，y是值</span></span><br><span class="line">print(nb.score(X_train, y_train))<span class="comment">#模型训练好之后，把X_train放入，训练出一个y，跟y_train比较，得出准确度</span></span><br><span class="line">print(nb.score(X_test, y_test))<span class="comment">#训练集的准确度比测试集好，因为是用训练集来训练的，过拟合</span></span><br><span class="line">print(classification_report(y_test, nb.predict(X_test)))</span><br></pre></td></tr></table></figure>
 
 <pre><code>0.9676506527750981
